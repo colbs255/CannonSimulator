@@ -21,7 +21,7 @@ class CannonBall {
     }
     draw() {
         ctx.beginPath();
-        ctx.arc(this.x * sizeScale, this.y * sizeScale, this.radius, 0 , Math.PI*2);
+        ctx.arc(this.x, this.y, this.radius, 0 , Math.PI*2);
         ctx.fillStyle = this.color;
         ctx.fill();
         ctx.closePath();
@@ -39,8 +39,8 @@ class CannonBall {
         
         ctx.fillStyle = "black";
         ctx.font = "15px Arial";
-        ctx.fillText("y: " + -((Math.floor(this.y * 100) / 100) - canvas.height), (canvas.width - 80) * sizeScale, (this.y - 10) * sizeScale);
-        ctx.fillText("y-vel: " + -((Math.floor(this.yVel * 100) / 100)), (canvas.width - 80) * sizeScale, (this.y + 25) * sizeScale);
+        ctx.fillText("y: " + -((Math.floor(this.y * 100) / 100) - canvas.height), (canvas.width - 80), (this.y - 10));
+        ctx.fillText("y-vel: " + -((Math.floor(this.yVel * 100) / 100)), (canvas.width - 80), (this.y + 25));
     }
 }
 
@@ -54,11 +54,11 @@ class Goal {
     }
     draw() {
         ctx.fillStyle = this.color;
-        ctx.fillRect((this.xDis - (this.length / 2)) * sizeScale, (cannon.height - this.yDis) * sizeScale, this.length * sizeScale, this.width * sizeScale);
+        ctx.fillRect((this.xDis - (this.length / 2)), (cannon.height - this.yDis), this.length, this.width);
         
         ctx.fillStyle = "black";
         ctx.font = "10px Arial";
-        ctx.fillText("x: " + this.xDis + " y: " + this.yDis, (this.xDis - (this.length / 2)) * sizeScale, (canvas.height - this.yDis) + this.width + 10) * sizeScale;
+        ctx.fillText("x: " + this.xDis + " y: " + this.yDis, (this.xDis - (this.length / 2)), (canvas.height - this.yDis) + this.width + 10);
     }
 }
 
