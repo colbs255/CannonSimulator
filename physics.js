@@ -69,7 +69,7 @@ class Cannon {
         this.length = 30;
         this.width = 10;
         this.angle = 90;
-        this.launchVelocity = 60;
+        this.launchVelocity = 50;
         this.height = canvas.height;
         this.color = "green";
     }
